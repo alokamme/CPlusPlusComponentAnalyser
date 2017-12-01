@@ -1,0 +1,49 @@
+#include "/home/alok/Documents/pugixml-1.8/src/mtechxml.hpp"
+#include <iostream>
+#include <sstream>
+using namespace mtech;
+using namespace std;
+int main()
+{
+    xml_document doc;
+    string nameElement;
+
+    if (!doc.load_file("/home/alok/Desktop/Test/test.xml")) return -1;
+
+
+    xml_node elements = doc.child("unit");
+
+    cout << elements.name() << std::endl;
+
+    for (xml_node element = elements.first_child(); element; element = element.next_sibling())
+    {
+        //We found a "Element" -- print it's attributes
+        for (xml_attribute attr = element.first_attribute(); attr; attr = attr.next_attribute())
+        {
+            cout << " " << attr.name() << "=" << attr.value() << endl;
+
+            string attrName = attr.name();
+            if( !attrName.compare("name") )
+            {
+                nameElement = attr.value();
+            }
+        }
+        cout << endl;
+
+        cout << "element: "  << nameElement << endl;
+        //Now print all elements and attributes of current "element"
+        for (xml_node child = panel.first_child(); child; child = child.next_sibling())
+        {
+            cout << child.name() << endl;     // get element name
+            // iterate through all attributes
+            for (xml_attribute attr = child.first_attribute(); attr; attr = attr.next_attribute())
+            {
+                cout << " " << attr.name() << "=" << attr.value() << endl;
+            }
+            cout << endl;
+        }
+    }
+    cout << endl;
+}
+
+

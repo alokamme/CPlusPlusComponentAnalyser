@@ -1,0 +1,46 @@
+#include "pugixml.hpp"
+#include <iostream>
+#include <sstream>
+
+int main()
+{
+    pugi::xml_document doc;
+    std::string namePanel;
+
+    if (!doc.load_file("test.xml")) return -1;
+
+
+    pugi::xml_node classes = doc.child("class");
+
+    std::cout << classes.name() << std::endl;
+std::string nameyou;
+    for (pugi::xml_node you = classes.first_child(); you; you = you.next_sibling())
+    {
+        //We found a "class" -- print it's attributes
+        for (pugi::xml_attribute attr = you.first_attribute(); attr; attr = attr.next_attribute())
+        {
+            std::cout << " " << attr.name() << "=" << attr.value() << std::endl;
+
+            std::string attrName = attr.name();
+            if( !attrName.compare("name") )
+            {
+              nameyou = attr.value();
+            }
+        }
+        std::cout << std::endl;
+
+        std::cout << "you: "  << nameyou << std::endl;
+        //Now print all elements and attributes of current "Panel"
+        for (pugi::xml_node child = you.first_child(); child; child = child.next_sibling())
+        {
+            std::cout << child.name() << std::endl;     // get element name
+            // iterate through all attributes
+            for (pugi::xml_attribute attr = child.first_attribute(); attr; attr = attr.next_attribute())
+            {
+                std::cout << " " << attr.name() << "=" << attr.value() << std::endl;
+            }
+            std::cout << std::endl;
+        }
+    }
+    std::cout << std::endl;
+}

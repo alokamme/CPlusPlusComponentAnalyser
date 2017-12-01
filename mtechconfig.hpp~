@@ -1,0 +1,14 @@
+/**
+ * diat
+ * mtechxml parser - config file
+ * --------------------------------------------------------
+ */
+
+#ifndef HEADER_MTECHCONFIG_HPP
+#define HEADER_MTECHCONFIG_HPP
+
+
+ #define MTECHXML_HEADER_ONLY
+#endif
+
+

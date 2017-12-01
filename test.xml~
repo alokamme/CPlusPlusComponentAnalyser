@@ -1,0 +1,7 @@
+<class>classi
+       <name>Person</name>
+       <block>{
+       		<private type="default"></private>
+       		<public>public:</public>
+      }</block>
+</class>

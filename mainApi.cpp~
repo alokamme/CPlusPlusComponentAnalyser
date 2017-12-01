@@ -1,0 +1,6 @@
+#include "call_api.h"
+int main ()
+{
+StringList api;
+api.PrintWords();
+}

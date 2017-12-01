@@ -1,0 +1,113 @@
+#ifndef __IOSTREAM_H
+#include <iostream>
+#endif
+#ifndef __STRING_H
+#include <string>   // String manipulating library
+#endif
+#ifndef __FSTREAM_H
+#include <fstream>  // Contains file stream processing types
+#endif
+#ifndef __VECTOR_H
+#include <vector>   // Vector template library
+#endif 
+#ifndef XMLVECTOR_H
+#include "xmlVector.h" // Include buildRelation.h header implimentation
+#endif
+using namespace std; //
+
+void xmlVector::browseFile() // Create vector from parsed data
+{
+ifstream code_file ("Test.txt", ios::in);//ifstream constructor to open file
+	if(code_file.is_open())// Load File
+	{
+	    getline(code_File, line))// read a line
+	 	istringstream iss(line);
+	 	 while( iss >> word )	
+	 	 { 
+             vect.push_back(word);   // add the line to the vector
+                	}
+        }		//	else
+			//{
+			//Exit program if unable to open file
+			//cerr << "Can't open file" << endl;
+			//exit( EXIT_FAILURE );	
+			//}
+	}
+	
+	// print out the lines in vector:
+
+	//for (size_t i = 0; i < vector_str.size(); i++)
+    	//	cout << vector_str[i] << endl;
+
+void xmlVector::printVector() // Print values in vector_str
+{
+	for (str_it = vect.begin(); str_it !=vect.end(); str_it++)
+	{ 
+	cout << *str_it << endl;
+	}
+}
+	
+	
+/***********************************************************/
+/************* CLASS LIST *********************************/	
+
+/*string classList::list_classes()
+{	//td::map<K, T>::iterator it1 = it;
+	
+	for (str_it = vector_str.begin(); str_it !=vector_str.end(); str_it++)
+	 {
+     		        temp = &str_it;
+   		        string element1 = "element";
+                  if(*temp.compare(element1) == 0){
+                        
+                        str_it = begin()+1;
+                  	  temp = &str_it;
+                  	string element2 = "class";		  
+		  if(*temp.compare(element2) == 0){
+		        
+		        str_it = begin()+2;
+		          temp = &str_it;
+		        string element3 = "pcdata";		  
+		  if(*temp.compare(element3) == 0){
+		         
+		         str_it = begin()+3;
+		           temp = &str_it;
+		         string element4 = "class";		  
+		  if(*temp.compare(element4) == 0){
+		  
+		         str_it = begin()+4;
+		           temp = &str_it;
+		         string element5 = "element";		  
+		  if(*temp.compare(element5) == 0){
+		  
+		         str_it = begin()+5;
+		         temp = &str_it;
+		         string element6 = "name";		  
+		  if(*temp.compare(element6) == 0){
+		  
+		         str_it = begin()+6;
+		         temp = &str_it;
+		         string element7 = "pcdata";		  
+		  if(*temp.compare(element7) == 0){		         	  
+		         class_name = *temp;
+	          cout << "class name = " << class_name;
+	          } 
+		  }
+		  }
+		  }
+		  }
+		  }    
+      }
+    }
+ }	*/
+/*void pattern::pattern_push()
+{
+class_list.push_back("element");
+class_list.push_back("class");
+class_list.push_back("pcdata");
+class_list.push_back("class");
+class_list.push_back("element");
+class_list.push_back("name");
+class_list.push_back("pcdata");
+
+}*/

@@ -1,0 +1,49 @@
+#include <iostream> // Std library 
+#include <string>   // String manipulating library
+#include <fstream>  // Contains file stream processing types
+#include <vector>   // Vector template library
+#include <iomanip>  // Std manipulation functions library
+#include <cstdlib>  // Exit function prototype
+#include <stdexcept>// Throw exception handling
+#include "buildRelation.h" // Include buildRelation.h header implimentation
+using namespace std;
+//using namespace mtech;
+void xmlRelation::browseFile()
+{
+
+//ifstream constructor to open file 
+ifstream code_File ("Test.txt", ios::in);
+
+// Define vector to store the File.
+ vector< string > vector_str;
+ string line;
+	// Load File
+	if(code_File.is_open())
+
+	{
+	 while (getline(code_File, line))
+	 {
+		 // read a line and only enter the loop if it succeeds 
+             vector_str.push_back(line);   // add the line to the vector
+
+	}
+       }			else
+			{
+			//Exit program if unable to open file
+			cerr << "Can't open file" << endl;
+			exit( EXIT_FAILURE );	
+			}
+	
+	
+	// print out the lines in vector:
+
+	//for (size_t i = 0; i < vector_str.size(); i++)
+    	//	cout << vector_str[i] << endl;
+
+void xmlRelation::printVector()
+	{
+	for (string s : vector_str) cout << s << endl;
+
+	}
+}
+

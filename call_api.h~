@@ -1,0 +1,12 @@
+#include <vector>
+#include <string>
+
+class StringList
+{
+public:
+    StringList();
+    void PrintWords();
+private:
+    size_t numberOfLines;
+    std::vector<std::string> str;
+};

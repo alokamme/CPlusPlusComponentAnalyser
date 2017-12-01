@@ -1,0 +1,29 @@
+#include <iostream> // Std library 
+#include <string>   // String manipulating library
+#include <fstream>  // Contains file stream processing types
+#include <vector>   // Vector template library
+#include <iomanip>  // Std manipulation functions library
+#include <cstdlib>  // Exit function prototype
+#include <stdexcept>// Throw exception handling
+#include "analyseTree.h" // Tree analysis implimentation
+#include <algorithm>
+using namespace std;
+int analyseTree::class_list()
+{
+while(!vector_str.empty())
+	{
+for ( size_t i = 0; i <= vector_str.size(); i++)
+	{
+       if ( vector_str[i] == "element")// && vector_str[i+1] == "class" && vector_str[i+2] == "pcdata" && vector_str == "class" && vector_str[i+3] == "elememt" && vector_str[i+4] == "name" && vector_str[i+5] == "pcdata")
+	{
+	i = i+6;
+	class_name == vector_str[i];
+	cout << class_name << '\n' << endl;
+			}
+	else
+	{
+	cout << "No classes exist." << '\n' << endl;
+			}
+		}
+	} 
+}
